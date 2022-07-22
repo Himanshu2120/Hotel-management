@@ -11,12 +11,15 @@
   @if(!empty($update_data))
     <h3>Your Record Has Been Updated.</h3>
   @endif
-  <form method="POST">
+  <form enctype="multipart/form-data" method="POST">
     @csrf
     <label for="name">First Name</label>
     <input type="text" id="name" name="fname" value="{{$edit_data->name}}" placeholder="Your name..">
     <label for="email">Your Email</label>
     <input type="text" id="email" value='{{$edit_data->email}}' name="email" placeholder="Your Email..">
+
+    <label for="doc">Document</label>
+    <input type="file" name="image" placeholder="Choose image" id="doc">
     <input type="submit" value="Submit">
   </form>
 </body>
